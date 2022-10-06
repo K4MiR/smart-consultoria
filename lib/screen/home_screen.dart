@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smart_consultoria/screen/client_screen.dart';
+import 'package:smart_consultoria/screen/company_screen.dart';
 import 'package:smart_consultoria/screen/services_screen.dart';
+
+import 'contatcs_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,9 +17,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         backgroundColor: Colors.green,
-        title: Text("smart consultoria"),
+        title: Text("smart consultorias"),
       ),
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -38,19 +41,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Ink.image(
-                      image: AssetImage('assets/image/cliente.png'),
-                      width: 160,
-                      height: 160,
-                      fit: BoxFit.cover,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ClienteScreen()));
-                        },
-                      ),
-                    ),
-                    SizedBox(width: 20),
-                    Ink.image(
                       image: AssetImage('assets/image/services.png'),
                       width: 160,
                       height: 160,
@@ -59,6 +49,19 @@ class _HomeScreenState extends State<HomeScreen> {
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => ServicesScreen()));
+                        },
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    Ink.image(
+                      image: AssetImage('assets/image/cliente.png'),
+                      width: 160,
+                      height: 160,
+                      fit: BoxFit.cover,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => ClienteScreen()));
                         },
                       ),
                     ),
@@ -74,7 +77,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 160,
                       fit: BoxFit.cover,
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => ContactsScreen()));
+                        },
                       ),
                     ),
                     SizedBox(width: 20),
@@ -84,7 +90,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 160,
                       fit: BoxFit.cover,
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => CompanyScreen()));
+                        },
                       ),
                     ),
                   ],

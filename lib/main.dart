@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:smart_consultoria/screen/company_screen.dart';
+import 'package:smart_consultoria/screen/contatcs_screen.dart';
 import 'package:smart_consultoria/screen/home_screen.dart';
 import 'package:smart_consultoria/screen/services_screen.dart';
 import 'package:smart_consultoria/screen/splash_screen.dart';
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ServicesScreen(),
+      home: Splash_Screen(),
     );
   }
 }
