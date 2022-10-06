@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:smart_consultoria/screen/client_screen.dart';
+import 'package:smart_consultoria/screen/services_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -20,60 +22,72 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 40),
               child: Image.asset(
                 "assets/image/logo.png",
                 width: 200,
               ),
             ),
-            SizedBox(height: 50),
-            Row(
+            SizedBox(height: 60),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Ink.image(
-                  image: AssetImage('assets/image/cliente.png'),
-                  width: 160,
-                  height: 160,
-                  fit: BoxFit.cover,
-                  child: InkWell(
-                    onTap: () {},
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Ink.image(
+                      image: AssetImage('assets/image/cliente.png'),
+                      width: 160,
+                      height: 160,
+                      fit: BoxFit.cover,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => ClienteScreen()));
+                        },
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    Ink.image(
+                      image: AssetImage('assets/image/services.png'),
+                      width: 160,
+                      height: 160,
+                      fit: BoxFit.cover,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => ServicesScreen()));
+                        },
+                      ),
+                    ),
+                  ],
                 ),
-                SizedBox(width: 20),
-                Ink.image(
-                  image: AssetImage('assets/image/services.png'),
-                  width: 160,
-                  height: 160,
-                  fit: BoxFit.cover,
-                  child: InkWell(
-                    onTap: () {},
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
-            Row(
-              children: [
-                Ink.image(
-                  image: AssetImage('assets/image/contacts.png'),
-                  width: 160,
-                  height: 160,
-                  fit: BoxFit.cover,
-                  child: InkWell(
-                    onTap: () {},
-                  ),
-                ),
-                SizedBox(width: 20),
-                Ink.image(
-                  image: AssetImage('assets/image/company.png'),
-                  width: 160,
-                  height: 160,
-                  fit: BoxFit.cover,
-                  child: InkWell(
-                    onTap: () {},
-                  ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Ink.image(
+                      image: AssetImage('assets/image/contacts.png'),
+                      width: 160,
+                      height: 160,
+                      fit: BoxFit.cover,
+                      child: InkWell(
+                        onTap: () {},
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    Ink.image(
+                      image: AssetImage('assets/image/company.png'),
+                      width: 160,
+                      height: 160,
+                      fit: BoxFit.cover,
+                      child: InkWell(
+                        onTap: () {},
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
